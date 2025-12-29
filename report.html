@@ -8,35 +8,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <script>
-        function calculateBMI() {
-            let height = document.getElementById("height").value;
-            let weight = document.getElementById("weight").value;
+    
+function convertTemp() {
+    let celsius = document.getElementById("celsius").value;
 
-            if (height === "" || weight === "") {
-                alert("請輸入身高和體重！");
-                return;
-            }
+    if (celsius === "") {
+        alert("請輸入攝氏溫度");
+        return;
+    }
 
-            // 身高轉成公尺
-            height = height / 100;
+    celsius = parseFloat(celsius);
+    let fahrenheit = (celsius * 9 / 5) + 32;
 
-            let bmi = weight / (height * height);
-            bmi = bmi.toFixed(2);
+    alert(
+      "攝氏 " + celsius + "°C\n" +
+      "等於 華氏 " + fahrenheit.toFixed(2) + "°F"
+    );
+}
 
-            let result = "";
-
-            if (bmi < 18.5) {
-                result = "體重過輕";
-            } else if (bmi < 24) {
-                result = "正常範圍";
-            } else if (bmi < 27) {
-                result = "過重";
-            } else {
-                result = "肥胖";
-            }
-
-            alert("你的 BMI 是：" + bmi + "\n判定結果：" + result);
-        }
     </script>
     
   
@@ -209,22 +198,22 @@
 
         
         <div class="col-sm-4">
-        <h1>BMI</h1>
+        <h1>溫度換算</h1>
             <div class="card shadow p-4">
-              <h2 class="text-center mb-4">BMI 計算器</h2>
+              <h2 class="text-center mb-4">攝氏 ↔ 華氏 轉換器</h2>
       
               <div class="mb-3">
-                  <label class="form-label">身高（公分）</label>
-                  <input type="number" id="height" class="form-control" placeholder="例如：170">
+                  <label class="form-label">攝氏溫度（°C）</label>
+                
               </div>
       
               <div class="mb-3">
-                  <label class="form-label">體重（公斤）</label>
-                  <input type="number" id="weight" class="form-control" placeholder="例如：60">
+                 
+                  <input type="number" id="celsius" class="form-control" placeholder="例如：25">
               </div>
       
-              <button class="btn btn-primary w-100" onclick="calculateBMI()">
-                  計算 BMI
+              <button class="btn btn-primary w-100" onclick="convertTemp()">
+                  換算溫度
               </button>
           </div>
         
