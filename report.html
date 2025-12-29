@@ -1,26 +1,26 @@
-<!doctype html>
-<html lang="zh-TW">
+<!doctype html>  <!-- 宣告 HTML5 文件類型 -->
+<html lang="zh-TW"> <!-- 設定頁面語言為繁體中文（台灣） -->
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"><!-- 設定字元編碼為 UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>my report</title>
+    <title>my report</title> <!-- 網頁標題 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
     <script>
     
-function convertTemp() {
-    let celsius = document.getElementById("celsius").value;
+function convertTemp() { // 溫度轉換函式（攝氏轉華氏）
+    let celsius = document.getElementById("celsius").value; // 取得輸入的攝氏溫度
 
-    if (celsius === "") {
-        alert("請輸入攝氏溫度");
-        return;
+    if (celsius === "") { // 檢查是否為空值
+        alert("請輸入攝氏溫度"); // 提示使用者輸入
+        return; // 結束函式
     }
 
-    celsius = parseFloat(celsius);
-    let fahrenheit = (celsius * 9 / 5) + 32;
+    celsius = parseFloat(celsius); // 將字串轉成數字
+    let fahrenheit = (celsius * 9 / 5) + 32; // 攝氏轉華氏公式
 
-    alert(
+    alert( // 顯示轉換結果
       "攝氏 " + celsius + "°C\n" +
       "等於 華氏 " + fahrenheit.toFixed(2) + "°F"
     );
@@ -32,7 +32,7 @@ function convertTemp() {
   </head>
   <body>
     
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary"> <!-- 導覽列 -->
         <div class="container">
 
         <a class="navbar-brand" href="page1.html">
@@ -43,16 +43,16 @@ function convertTemp() {
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarNav"> <!-- 可收合選單 -->
+            <ul class="navbar-nav"> <!-- 導覽選項清單 -->
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="page2.html">報告</a>
+                <a class="nav-link active" aria-current="page" href="page2.html">報告</a> <!-- 目前頁面連結 -->
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">未來</a>
+                <a class="nav-link" href="#">未來</a> <!-- 未來頁面 -->
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">演講</a>
+                <a class="nav-link" href="#">演講</a> <!-- 演講頁面 -->
               </li>
 
             </ul>
@@ -65,28 +65,28 @@ function convertTemp() {
     <div class="container text-center">
      
       
-       <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
+       <div id="carouselExampleCaptions" class="carousel slide"> <!-- 輪播元件 -->
+        <div class="carousel-indicators"> <!-- 輪播指示點 -->
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div class="carousel-inner"><!-- 輪播內容 -->
+          <div class="carousel-item active"> <!-- 第一張圖 -->
             <img src="images/photo1.jpg" class="d-block w-100" alt="firs page">
-            <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption d-none d-md-block"> <!-- 圖片文字說明 -->
               <h5>最喜歡的機車</h5>
               <p>Hond  CB650R</p>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item"> <!-- 第二張圖 -->
             <img src="images/photo2.jpg" class="d-block w-100" alt="secand page">
             <div class="carousel-caption d-none d-md-block">
               <h5>騎車上武嶺</h5>
               <p>很冷，很漂亮</p>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item"> <!-- 第三張圖 -->
             <img src="images/photo3.jpg" class="d-block w-100" alt="thired page">
             <div class="carousel-caption d-none d-md-block">
               <h5>彈鋼琴</h5>
@@ -111,9 +111,9 @@ function convertTemp() {
       <div class="row">
         <!-- commment -->
         
-        <div class="col-sm-8">
+        <div class="col-sm-8"> <!-- 左側新聞區 -->
           <h1>最近新聞</h1>
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample"> <!-- 手風琴元件 -->
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -197,9 +197,9 @@ function convertTemp() {
         </div>
 
         
-        <div class="col-sm-4">
+        <div class="col-sm-4"> <!-- 右側溫度換算區 -->
         <h1>溫度換算</h1>
-            <div class="card shadow p-4">
+            <div class="card shadow p-4"> <!-- 卡片樣式 -->
               <h2 class="text-center mb-4">攝氏 ↔ 華氏 轉換器</h2>
       
               <div class="mb-3">
@@ -207,7 +207,7 @@ function convertTemp() {
                 
               </div>
       
-              <div class="mb-3">
+              <div class="mb-3"> 
                  
                   <input type="number" id="celsius" class="form-control" placeholder="例如：25">
               </div>
